@@ -5,9 +5,7 @@ services:
         ports:
             - "5432:5432"
         volumes:
-            - type: bind
-              source: /opt/local/pgsql
-              target: /var/lib/pgsql
+            - "/opt/local/pgsql/10/data:/var/lib/pgsql/10/data"
         env_file:
             - env_file.txt
 
