@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+    db:
+        build: .
+        ports:
+            - "5432:5432"
+        volumes:
+            - type: bind
+              source: /opt/local/pgsql
+              target: /var/lib/pgsql
+        env_file:
+            - env_file.txt
+
