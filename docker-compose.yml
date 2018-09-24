@@ -5,7 +5,7 @@ services:
         ports:
             - "5432:5432"
         volumes:
-            - "/opt/local/pgsql/10/data:/var/lib/pgsql/10/data"
+            - "/opt/local/pgsql/10:/var/lib/pgsql/10"
         env_file:
             - env_file.txt
 
