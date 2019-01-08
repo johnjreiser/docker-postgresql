@@ -1,11 +1,11 @@
-version: '3.2'
+version: '3.4'
 services:
     db:
         build: .
         ports:
             - "5432:5432"
         volumes:
-            - "/opt/local/pgsql/10:/var/lib/pgsql/10"
+            - /opt/local/pgsql/11/data:/var/lib/pgsql/11/data:rw
         env_file:
             - env_file.txt
 

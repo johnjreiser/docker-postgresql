@@ -2,11 +2,14 @@
 
 set -e
 
-PGBIN=/usr/pgsql-10/bin
+if [[ -z "$PGBIN" ]]; then
+    (>&2 echo "Setting PGBIN...")
+    export PGBIN=/usr/pgsql/bin
+fi
 
-if [[ ! -z "$PGDATA" ]]; then
+if [[ -z "$PGDATA" ]]; then
     (>&2 echo "Setting PGDATA...")
-    export PGDATA=/var/lib/pgsql/10/data
+    export PGDATA=/var/lib/pgsql/11/data
 fi
 
 if [ ! -d "${PGDATA}/base" ]; then
